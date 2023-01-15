@@ -1,19 +1,13 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../config";
 ---
 
 <header>
-  <div class="mx-auto max-w-3xl py-28">
-    <p>Website is currently being rebuilt!</p>
-    <br />
+  <div class="mx-auto max-w-3xl px-5 py-28">
     <h2 class="text-4xl">
       {SITE_TITLE}
     </h2>
-    <nav class="text-xl">
-      <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/blog">Blog</HeaderLink>
-    </nav>
+    <p>Website work in progress</p>
   </div>
 </header>
 <style>
@@ -42,6 +36,21 @@ import { SITE_TITLE } from "../config";
     }
     100% {
       background-position: 50% 0%;
+    }
+  }
+  div {
+    animation-name: flyingHeader;
+    animation-duration: 0.3s;
+  }
+  @keyframes flyingHeader {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, -100%, 0);
+    }
+
+    100% {
+      opacity: 1;
+      transform: none;
     }
   }
 </style>

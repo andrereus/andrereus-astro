@@ -3,6 +3,13 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+
+// Use Astro.glob() to fetch all posts, and then sort them by date.
+const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
+  (a, b) =>
+    new Date(b.frontmatter.pubDate).valueOf() -
+    new Date(a.frontmatter.pubDate).valueOf()
+);
 ---
 
 <!DOCTYPE html>
@@ -12,32 +19,102 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
   </head>
   <body>
     <Header title={SITE_TITLE} />
-    <main class="mx-auto max-w-3xl prose">
-      <p>Hi, I'm André 👋 a software engineer and designer.</p>
-      <h2>Latest websites</h2>
-      <ul>
-        <li><a href="https://pkutools.com/">☕ PKU Tools (PWA)</a></li>
-        <li>
-          <a href="https://github.com/andrereus/simple-nutrition-calculator">
-            🌀 Simple Nutrition Calculator (PWA)
-          </a>
-        </li>
-        <li>
-          <a href="https://pkumanager.com/">🍴 PKU Manager (Hybrid App)</a>
-        </li>
-        <li>
-          <a href="https://pherechner.de/">📝 Phe Rechner (Hybrid App)</a>
-        </li>
-      </ul>
-      <h2>More about me</h2>
-      <ul>
-        <li><a href="https://github.com/andrereus">🐙 GitHub</a></li>
-        <li><a href="https://dev.to/andrereus">💻 DEV.to</a></li>
-        <li><a href="https://soundcloud.com/amrdrew">☁ SoundCloud</a></li>
-        <li><a href="https://www.behance.net/andrereus">🎨 Behance</a></li>
-        <li><a href="https://dribbble.com/andrereus">🧑‍🎨 Dribbble</a></li>
-      </ul>
+    <main class="mx-auto max-w-3xl p-5 prose">
+      <section>
+        <h2>Apps</h2>
+        <ul>
+          <li>
+            <a href="https://pkutools.com/" target="_blank">
+              ☕ PKU Tools (PWA)
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/andrereus/simple-nutrition-calculator"
+              target="_blank"
+            >
+              🌀 Simple Nutrition Calculator (PWA)
+            </a>
+          </li>
+          <li>
+            <a href="https://pkumanager.com/" target="_blank">
+              🍴 PKU Manager (Hybrid App)
+            </a>
+          </li>
+          <li>
+            <a href="https://pherechner.de/" target="_blank">
+              📝 Phe Rechner (Hybrid App)
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Posts</h2>
+        <ul>
+          {
+            posts.map((post) => (
+              <li>
+                <time datetime={post.frontmatter.pubDate}>
+                  {new Date(post.frontmatter.pubDate).toLocaleDateString(
+                    "en-us",
+                    {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    }
+                  )}
+                </time>
+                <a href={post.url}>{post.frontmatter.title}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section>
+        <h2>Social</h2>
+        <ul>
+          <li>
+            <a href="https://github.com/andrereus" target="_blank">🐙 GitHub</a>
+          </li>
+          <li>
+            <a href="https://dev.to/andrereus" target="_blank">💻 DEV.to</a>
+          </li>
+          <li>
+            <a href="https://soundcloud.com/amrdrew" target="_blank">
+              ☁ SoundCloud
+            </a>
+          </li>
+          <li>
+            <a href="https://www.behance.net/andrereus" target="_blank">
+              🎨 Behance
+            </a>
+          </li>
+          <li>
+            <a href="https://dribbble.com/andrereus" target="_blank">
+              🧑‍🎨 Dribbble
+            </a>
+          </li>
+        </ul>
+      </section>
     </main>
-    <Footer />
+    <style>
+      main {
+        animation-name: flyingIndex;
+        animation-duration: 0.3s;
+      }
+      @keyframes flyingIndex {
+        0% {
+          opacity: 0;
+          transform: translate3d(0, 100%, 0);
+        }
+
+        100% {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
   </body>
 </html>
