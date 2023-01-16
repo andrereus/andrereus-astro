@@ -21,28 +21,8 @@ const {
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
-  </head>
-
-  <body>
-    <Header />
-    <main class="mx-auto max-w-3xl p-5 prose">
-      <article>
-        {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-        <h2>{title}</h2>
-        {pubDate && <time>{pubDate}</time>}
-        {
-          updatedDate && (
-            <div>
-              Last updated on <time>{updatedDate}</time>
-            </div>
-          )
-        }
-        <slot />
-      </article>
-    </main>
-    <Footer />
     <style>
-      main {
+      .flyingPost {
         animation-name: flyingPost;
         animation-duration: 0.3s;
       }
@@ -58,5 +38,25 @@ const {
         }
       }
     </style>
+  </head>
+
+  <body>
+    <Header />
+    <main class="flyingPost mx-auto max-w-3xl p-5 prose">
+      <article>
+        {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
+        <h2>{title}</h2>
+        {pubDate && <time>{pubDate}</time>}
+        {
+          updatedDate && (
+            <div>
+              Last updated on <time>{updatedDate}</time>
+            </div>
+          )
+        }
+        <slot />
+      </article>
+    </main>
+    <Footer />
   </body>
 </html>

@@ -32,11 +32,11 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
       ul li a:visited {
         color: #8e32dc;
       }
-      .flyingIndex {
-        animation-name: flyingIndex;
+      .flyingBlog {
+        animation-name: flyingBlog;
         animation-duration: 0.3s;
       }
-      @keyframes flyingIndex {
+      @keyframes flyingBlog {
         0% {
           opacity: 0;
           transform: translate3d(0, 100%, 0);
@@ -50,30 +50,10 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
     </style>
   </head>
   <body>
-    <Header title={SITE_TITLE} />
-    <main class="flyingIndex mx-auto max-w-3xl p-5 prose">
+    <Header />
+    <main class="flyingBlog mx-auto max-w-3xl p-5 prose">
       <section>
-        <h2>Apps</h2>
-        <ul>
-          <li>
-            <a href="https://pkutools.com/">☕ PKU Tools</a>
-          </li>
-          <li>
-            <a href="https://simple-nutrition-calculator.vercel.app/">
-              🌀 Simple Nutrition Calculator
-            </a>
-          </li>
-          <li>
-            <a href="https://pkumanager.com/">🍴 PKU Manager</a>
-          </li>
-          <li>
-            <a href="https://pherechner.de/">📝 Phe Rechner</a>
-          </li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Posts</h2>
+        <h2>Blog</h2>
         <ul>
           {
             posts.map((post) => (
@@ -94,27 +74,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
           }
         </ul>
       </section>
-
-      <section>
-        <h2>Social</h2>
-        <ul>
-          <li>
-            <a href="https://github.com/andrereus">🐙 GitHub</a>
-          </li>
-          <li>
-            <a href="https://dev.to/andrereus">💻 DEV.to</a>
-          </li>
-          <li>
-            <a href="https://soundcloud.com/amrdrew">☁ SoundCloud</a>
-          </li>
-          <li>
-            <a href="https://www.behance.net/andrereus">🎨 Behance</a>
-          </li>
-          <li>
-            <a href="https://dribbble.com/andrereus">🧑‍🎨 Dribbble</a>
-          </li>
-        </ul>
-      </section>
     </main>
+    <Footer />
   </body>
 </html>
