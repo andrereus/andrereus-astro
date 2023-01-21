@@ -12,3 +12,5 @@ This blog post is a prime example of that capability. It was written entirely by
 While the use of AI in writing may raise some concerns about the future of jobs and the role of machines in our society, it is important to note that this technology is not meant to replace human writers, but rather to augment and assist them in their work. AI-powered writing tools can help writers with tasks such as research, data analysis, and even content generation, freeing up more time for the creative and conceptual aspects of writing.
 
 In conclusion, the use of AI in writing is an exciting development that has the potential to revolutionize the way we create and consume written content. As technology continues to advance, we can expect to see more and more applications of AI in various industries and aspects of our lives.
+
+(Text updated 21.01.2023)
