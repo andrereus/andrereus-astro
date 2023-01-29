@@ -30,26 +30,11 @@ const posts = (await getCollection("blog")).sort(
       ul li a:visited {
         color: #8e32dc;
       }
-      .flyingBlog {
-        animation-name: flyingBlog;
-        animation-duration: 0.3s;
-      }
-      @keyframes flyingBlog {
-        0% {
-          opacity: 0;
-          transform: translate3d(0, 100%, 0);
-        }
-
-        100% {
-          opacity: 1;
-          transform: none;
-        }
-      }
     </style>
   </head>
   <body>
     <Header />
-    <main class="flyingBlog mx-auto max-w-3xl p-5 prose">
+    <main>
       <section>
         <h2>Blog</h2>
         <ul>

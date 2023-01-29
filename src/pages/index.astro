@@ -29,26 +29,11 @@ const posts = (await getCollection("blog")).sort(
       ul li a:visited {
         color: #8e32dc;
       }
-      .flyingIndex {
-        animation-name: flyingIndex;
-        animation-duration: 0.3s;
-      }
-      @keyframes flyingIndex {
-        0% {
-          opacity: 0;
-          transform: translate3d(0, 100%, 0);
-        }
-
-        100% {
-          opacity: 1;
-          transform: none;
-        }
-      }
     </style>
   </head>
   <body>
     <Header title={SITE_TITLE} />
-    <main class="flyingIndex mx-auto max-w-3xl p-5 prose">
+    <main>
       <section>
         <h2>Apps</h2>
         <ul>

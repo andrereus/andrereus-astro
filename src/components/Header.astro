@@ -3,8 +3,8 @@ import { SITE_TITLE } from "../consts";
 ---
 
 <header>
-  <div class="flyingHeader mx-auto max-w-3xl px-5 py-28">
-    <h2 class="text-4xl">
+  <div class="header-container flyingHeader">
+    <h2>
       {SITE_TITLE}
     </h2>
     <p>Website work in progress</p>
@@ -47,7 +47,6 @@ import { SITE_TITLE } from "../consts";
       opacity: 0;
       transform: translate3d(0, -100%, 0);
     }
-
     100% {
       opacity: 1;
       transform: none;
