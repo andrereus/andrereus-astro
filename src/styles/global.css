@@ -31,14 +31,6 @@ footer {
     transform: none;
   }
 }
-.header-container {
-  margin: auto;
-  padding: 20px;
-  max-width: 65ch;
-}
-.header-container > h2 {
-  color: #fff;
-}
 h1,
 h2,
 h3,

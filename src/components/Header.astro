@@ -3,7 +3,7 @@ import { SITE_TITLE } from "../consts";
 ---
 
 <header>
-  <div class="header-container flyingHeader">
+  <div class="header-container">
     <h2>
       {SITE_TITLE}
     </h2>
@@ -25,9 +25,9 @@ import { SITE_TITLE } from "../consts";
       #e74c3c
     );
     background-size: 1400% 1400%;
-    animation: Animation 30s ease infinite;
+    animation: colorAnimation 30s ease infinite;
   }
-  @keyframes Animation {
+  @keyframes colorAnimation {
     0% {
       background-position: 50% 0%;
     }
@@ -38,11 +38,14 @@ import { SITE_TITLE } from "../consts";
       background-position: 50% 0%;
     }
   }
-  .flyingHeader {
-    animation-name: flyingHeader;
+  .header-container {
+    margin: auto;
+    padding: 20px;
+    max-width: 65ch;
+    animation-name: headerAnimation;
     animation-duration: 0.3s;
   }
-  @keyframes flyingHeader {
+  @keyframes headerAnimation {
     0% {
       opacity: 0;
       transform: translate3d(0, -100%, 0);
@@ -51,5 +54,8 @@ import { SITE_TITLE } from "../consts";
       opacity: 1;
       transform: none;
     }
+  }
+  .header-container > h2 {
+    color: #fff;
   }
 </style>
