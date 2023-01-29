@@ -1,5 +1,4 @@
 ---
-layout: "../../layouts/BlogPost.astro"
 title: "How to implement Coding Guidelines"
 description: "Coding Guidelines are a crucial part of making a codebase with multiple contributors consistent, clean, readable and less error prone."
 pubDate: "Jul 22 2020"
