@@ -9,7 +9,7 @@ body {
   background-color: #fff;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  line-height: 1.8;
+  line-height: 1.7;
   color: #444;
   margin: 0;
 }
@@ -56,7 +56,7 @@ input {
   font-size: 16px;
 }
 content {
-  line-height: 2;
+  line-height: 1.8;
 }
 table {
   width: 100%;
