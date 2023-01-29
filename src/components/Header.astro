@@ -3,7 +3,7 @@ import { SITE_TITLE } from "../consts";
 ---
 
 <header>
-  <div class="header-container">
+  <div class="container">
     <h2>
       {SITE_TITLE}
     </h2>
@@ -38,9 +38,9 @@ import { SITE_TITLE } from "../consts";
       background-position: 50% 0%;
     }
   }
-  .header-container {
+  .container {
     margin: auto;
-    padding: 20px;
+    padding: 60px 0;
     max-width: 65ch;
     animation-name: headerAnimation;
     animation-duration: 0.3s;
@@ -55,7 +55,7 @@ import { SITE_TITLE } from "../consts";
       transform: none;
     }
   }
-  .header-container > h2 {
+  h2 {
     color: #fff;
   }
 </style>

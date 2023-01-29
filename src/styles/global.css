@@ -9,7 +9,7 @@ body {
   background-color: #fff;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  line-height: 1.5;
+  line-height: 1.8;
   color: #444;
   margin: 0;
 }
@@ -42,6 +42,7 @@ b {
   color: #222;
 }
 a {
+  text-decoration: none;
   color: #3273dc;
 }
 nav a {
@@ -55,7 +56,7 @@ input {
   font-size: 16px;
 }
 content {
-  line-height: 1.6;
+  line-height: 2;
 }
 table {
   width: 100%;
@@ -75,7 +76,6 @@ pre > code {
   all: unset;
 }
 blockquote {
-  border: 1px solid #999;
   color: #222;
   padding: 2px 0px 2px 20px;
   margin: 0px;
