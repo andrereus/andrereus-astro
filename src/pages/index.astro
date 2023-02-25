@@ -56,6 +56,11 @@ const posts = (await getCollection("blog")).sort(
 
       <section>
         <h2>Posts</h2>
+        <p>
+          New: <a href="https://andrereus.substack.com/">
+            Subscribe to newsletter
+          </a>
+        </p>
         <ul>
           {
             posts.map((post) => (
