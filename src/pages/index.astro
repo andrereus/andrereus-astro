@@ -35,26 +35,6 @@ const posts = (await getCollection("blog")).sort(
     <Header title={SITE_TITLE} />
     <main>
       <section>
-        <h2>Posts</h2>
-        <ul>
-          {
-            posts.map((post) => (
-              <li>
-                <time datetime={post.data.pubDate.toISOString()}>
-                  {post.data.pubDate.toLocaleDateString("en-us", {
-                    year: "numeric",
-                    month: "short",
-                    day: "numeric",
-                  })}
-                </time>
-                <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-              </li>
-            ))
-          }
-        </ul>
-      </section>
-
-      <section>
         <h2>Apps</h2>
         <ul>
           <li>
@@ -71,6 +51,26 @@ const posts = (await getCollection("blog")).sort(
           <li>
             <a href="https://pherechner.de/">📝 Phe Rechner</a>
           </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Posts</h2>
+        <ul>
+          {
+            posts.map((post) => (
+              <li>
+                <time datetime={post.data.pubDate.toISOString()}>
+                  {post.data.pubDate.toLocaleDateString("en-us", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  })}
+                </time>
+                <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+              </li>
+            ))
+          }
         </ul>
       </section>
 
